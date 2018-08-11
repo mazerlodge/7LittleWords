@@ -1,0 +1,108 @@
+S1 POA - 7 Little Words from Dict Py 20180203
+
+Goal - Create 7LW leveraging Dict.py's jumblept2 action.
+
+
+Approach
+----------
+Trace method calls leading to execution of jumblept2.
+	Why- orientation to dependencies.
+
+Capture relevant references (see below).
+	
+Evaluate wheel/rotor/odometer (whatever it is) population for adaptation to 7LW needs.
+	Specifically, multiple letters per wheel position.
+
+{add more here} 
+
+
+Reference
+-----------
+> Dict.py usage message text.
+	Usage: python dict.py -os [mac | win] -action [search | genmask | jumblept2 | maint ] {-debug}
+	About searches: find a word, pattern (like ABBC), substitution encoded word (like GBRRCB),
+	 or jumbled word (like ISFH, returns fish).
+		Params for -action search: -searchtype [word | pattern | encword | jumble] -target targetPhrase 
+		Params for -action jumblept2: -target letterList -windowsize n  
+		Params for -action genmask: -target targetPhrase 
+		Params for -action maint: -mainttype [ gensortcolumn | addword ] -target word_to_add 
+		Note: search for word or encword returns first match, pattern returns all matches.
+
+> Odometer methods (these are all within DictionaryTools.py, c/b extracted to a separate class) 
+	def generateOdometer(self, letterList, windowSize):
+		return odometer
+	
+	def isOdometerAtMax(self, odometer,oIdx):
+		return T/F
+		
+	def advanceOdometer(self, odometer, oIdx):
+		# Advance the odometer and skip any combos where a letter would be repeated.
+		# Said another way, each oIdx value must be distinct.
+		# Example: given 1-2-0, 1-2-1 is invalid, so is 1-2-2, skip to 1-2-3)
+		return void
+
+	def readOdometer(self, odometer, oIdx):
+		return current setting of each wheel in the odometer
+				
+	
+
+Trace
+-------
+> dict.py:
+	Loads an instance of the DictionaryEngine class (de is the variable name).
+	The init method of that class runs method parseArgs()
+		JumblePt2 action requires a target and windowSize parameters.
+		At the conclusion, an instance member, bInitOK, is populated.
+		
+	If de.bInitOK is true, de.doAction() is called.
+	de.doAction() calls self.doJumblePt2(self.targetPhrase, self.windowSize)
+	
+	> doJumblePt2:
+		calls self.generateOdometer, passing in the letterList and the windowSize.
+		
+		> generateOdometer:
+			creates an array of windowSize number of cells, each cell contains the entire letterlist. 
+			
+		Generate potential phrase List based on letterList length and windowSize (aka length of each output phrase)
+			e.g. letter list of 7, widow size 2 --> 7*6 (stop, aka given 7 letters there are 42 2 letter combos).
+			
+		Get a list of distinct sorted phrases from the potential phrase list.
+			e.g. the phrases TTO, TOT, and OTT all sort to OTT, so keep OTT.
+		
+		Process each phrase in the distinct list through the search processor w/ 'jumble' as a search type
+			e.g. currentMatches = self.doSearch("jumble", phrase, True) // True means 'be quiet'
+ 		
+ 		Add any matches no already on the final list to the final distinct word list.
+		
+		Output the final distinct word list.
+		
+Mods for 7LW implementation
+-----------------------------
+POA - Like doJumblePt2, but w/ letter list being a string segment list. 
+
+x- Refactor odometer arrays and methods to be a class.
+x- Odometer class s/b modified to accept phrase list in lieu of letter list. 
+X- Dictionary Engine s/b modified to include a 7LW action 
+
+NEXT: See Evernote [S1 POA - 7LW Py Project - 20180201]	
+
+
+
+
+
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

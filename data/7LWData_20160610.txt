@@ -1,0 +1,13 @@
+#7 Little Words data follows for ID 20160610
+# clues and lengths
+# 1. move stealthily (5) 
+# 2. result of condensed vapors (10) 
+# 3. teases, in the UK (4) 
+# 4. inconsistency (10) 
+# 5. blurry, on a screen (9) 
+# 6. autocratic (7) 
+# 7. excessiveness (11) 
+sk, pix, te, dist, ds
+la, tsar, nce, elat, orb
+ed, ex, hin, co, il 
+patc, ita, ulk, ist, ess

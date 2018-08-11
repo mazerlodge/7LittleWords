@@ -1,0 +1,13 @@
+#7 Little Words data follows for ID 20180111?
+# clues and lengths
+# 1. We agree it's a common Honda (6) accord
+# 2. Like Bruckner's Ninth (10) unfinished (added to dictionary)
+# 3. Condemn to punishment (8) sentence
+# 4. Fall like dominos (7) cascade
+# 5. One half, as a percentage (5) fifty
+# 6. establish as true (7) confirm
+# 7. Brooklyn neighborhood (8) flatbush (not in dictionary)
+de, sen, unf, acc, is
+ord, cas, fl, te, fif
+hed, ty, ca, in, fi 
+con, ush, rm, atb, nce 

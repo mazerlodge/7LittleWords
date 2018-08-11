@@ -1,0 +1,29 @@
+heoVI:src mazerlodge$ python dict.py -os mac -action 7lw -infile 7LWData_20160610.txt -windowsize 9
+Building distinct potential phrase list...
+Cycle Limit set to 116280
+WindowSize=9 wheelSize=20 numberOfWheels=4
+Cycles used = 4845 
+Processing, phrase combos count = 711
+	 match detected = pixelated
+Searching dictionary, processed=0.1 matches=1
+Searching dictionary, processed=0.2 matches=1
+Searching dictionary, processed=0.3 matches=1
+	 match detected = ancestral
+Searching dictionary, processed=0.4 matches=2
+Searching dictionary, processed=0.5 matches=2
+Searching dictionary, processed=0.6 matches=2
+Searching dictionary, processed=0.7 matches=2
+	 match detected = stenciled
+	 match detected = neolithic
+Searching dictionary, processed=0.8 matches=4
+Searching dictionary, processed=0.9 matches=4
+	 match detected = dislocate
+	 match detected = solicited
+Matches detected
+	pixelated
+	ancestral
+	stenciled
+	neolithic
+	dislocate
+	solicited
+Match count = 6
